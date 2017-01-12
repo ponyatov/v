@@ -9,12 +9,15 @@
 \[					TOC(Sym,LQ)
 \]					TOC(Sym,RQ)
 
-\=					TOC(Sym,EQ)
-\:					TOC(Sym,SYM)
+\=					TOC(Op,EQ)
+\:					TOC(Op,COLON)
+\@					TOC(Op,AT)
+
+\+					TOC(Op,ADD)
 
 &&					TOC(Sym,SYM)
 $[<@]				TOC(Sym,SYM)
 
-[a-zA-Z0-9_.@\-/$()\?*~]+		TOC(Sym,SYM)
+[a-zA-Z0-9_.\-/$()\?*~]+		TOC(Sym,SYM)
 
 [ \t\r\n]+			{}

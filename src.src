@@ -1,0 +1,24 @@
+core	= [ ypp.ypp lpp.lpp hpp.hpp cpp.cpp Makefile ]
+files	= [ src.src log.log core bat.bat .gitignore ]
+
+bat.bat	= [ @gvim -p files ]
+
+.end
+
+Makefile = [
+
+log.log: src.src ./exe.exe
+	./exe.exe < $< > $@ && tail $(TAIL) $@
+C = cpp.cpp ypp.tab.cpp lex.yy.c
+H = hpp.hpp ypp.tab.hpp
+./exe.exe: $(C) $(H)
+	$(CXX) -o $@ $(C)
+ypp.tab.cpp: ypp.ypp
+	bison $<
+lex.yy.c: lpp.lpp
+	flex $<
+
+]
+
+.gitignore = [ *~ *.swp exe.exe log.log ypp.tab.?pp lex.yy.c ]
+
